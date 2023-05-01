@@ -25,5 +25,7 @@ states:
             translation: [-1.0, 0.0, 0.0]
 
 ManipManager:
-  objPoseTopic: /cnoid/object/pose
-  objVelTopic: /cnoid/object/vel
+  objPoseTopic: /mujoco/object/pose
+  objVelTopic: /mujoco/object/vel
+  # objPoseTopic: /cnoid/object/pose
+  # objVelTopic: /cnoid/object/vel
