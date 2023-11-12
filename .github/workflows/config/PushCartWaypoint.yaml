@@ -14,15 +14,10 @@ states:
       preWalk: true
       waypointList:
         - startTime: 2.0
-          duration: 10.0
+          duration: 30.0
           relPose:
-            translation: [1.0, 0.0, 0.0]
-        - duration: 10.0
-          relPose:
-            rotation: [0.0, 0.0, -0.5235987755982988]
-        - duration: 10.0
-          relPose:
-            translation: [-1.0, 0.0, 0.0]
+            translation: [1.2, -1.2, 0.0]
+            rotation: [0.0, 0.0, -1.5708]
 
 ManipManager:
   objPoseTopic: /cnoid/object/pose

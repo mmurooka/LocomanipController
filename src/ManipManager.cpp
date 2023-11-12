@@ -592,10 +592,12 @@ void ManipManager::updateObjTraj()
 
   // Update object waypoints visualization
   {
-    std::vector<sva::PTransformd> waypointPoseList = {objPoseWithoutOffset};
-    for(const auto & waypoint : waypointQueue_)
+    std::vector<sva::PTransformd> waypointPoseList;
+    constexpr double waypointsMarkerDt = 0.1; // [sec]
+    for(double t = ctl().t(); t <= (waypointQueue_.empty() ? ctl().t() : waypointQueue_.back().endTime);
+        t += waypointsMarkerDt)
     {
-      waypointPoseList.push_back(waypoint.pose);
+      waypointPoseList.push_back(calcRefObjPose(t));
     }
 
     ctl().gui()->removeCategory({ctl().name(), config_.name, "WaypointsMarker"});
